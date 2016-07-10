@@ -1,9 +1,12 @@
 from os.path import dirname
 from os import listdir
 from os.path import isfile, join
+
+'''
 from time import sleep
 from bs4 import BeautifulSoup
 from splinter import Browser
+'''
 
 
 # noinspection PyBroadException
@@ -29,6 +32,7 @@ def execute(args: list):
 
     except Exception as err:
         return "Couldn't list the videos... %s" % str(err.args[0])
+
 
 """
 with Browser('chrome') as browser:

@@ -1,7 +1,7 @@
 # noinspection PyBroadException
 def execute(args: list):
     try:
-        equal = ' '.join(args).replace('\n', '').strip().replace('^', '**')
+        equal = ' '.join(args).replace('\n', '').replace('\t', '').strip().replace('^', '**')
         evaled = eval(equal)
         return "Math Output: %s" % str(evaled)
     except Exception as err:

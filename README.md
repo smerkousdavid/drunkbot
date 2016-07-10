@@ -24,14 +24,9 @@ On others you might have to google how to install it. *Second* Also make sure yo
 
 ####Step 1
 
-To install the stable version of drunkbot do this
+Copy and paste this below into your terminal
 
-    python3.5 -m pip install -U drunkbot
-
-
-If you want the (probably) unstable version
-
-    python3 -m pip install -U https://github.com/smerkousdavid/drunkbot/archive/master.zip#egg=drunkbot
+    python3.5 -m pip install https://github.com/smerkousdavid/drunkbot/archive/master.zip#egg=drunkbot --upgrade
 
 
 
