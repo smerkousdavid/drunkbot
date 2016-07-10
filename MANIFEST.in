@@ -1,4 +1,3 @@
-include drunk_bot/*.txt
-include drunk_bot/randoms/*.mp3
-recursive-include drunk_bot/src *
-recursive-include drunk_bot/command_package *
+include LICENSE.txt
+include README.md
+recursive-include drunk_bot *

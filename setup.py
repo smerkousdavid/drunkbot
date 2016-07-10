@@ -1,6 +1,7 @@
 import os
 import re
 import io
+
 '''
 from os.path import dirname, isdir
 from urllib.request import urlretrieve
@@ -77,6 +78,35 @@ if __name__ == "__main__":
         classifiers=CLASSIFIERS,
         scripts=["drunkbot"],
         include_package_data=True,
+        package_data={
+            'drunkbot': ['*.txt', '*.md', 'LICENSE'],
+            'tmpupload': ['*'],
+            'videos': ['*'],
+            'src/linux/32': [
+                'src/linux/32/ffmpeg',
+                'src/linux/32/ffprobe'
+            ],
+            'src/linux/64': [
+                'src/linux/64/ffmpeg',
+                'src/linux/64/ffprobe'
+            ],
+            'src/mac/64': [
+                'src/mac/64/ffmpeg',
+                'src/mac/64/ffprobe'
+            ],
+            'src/win/32/bin': [
+                'src/win/32/bin/ffmpeg.exe',
+                'src/win/32/bin/ffprobe.exe'
+            ],
+            'src/win/64/bin': [
+                'src/win/64/bin/ffmpeg.exe',
+                'src/win/64/bin/ffprobe.exe'
+            ],
+            'songs': ['*'],
+            'randoms': ['*.mp3'],
+            'command_package/tmp': ['*'],
+            'command_package': ['*']
+        },
         install_requires=INSTALL_REQUIRES,
     )
 
