@@ -1,6 +1,6 @@
 __description__ = "A discord bot platform independent using ffmpeg, youtube-dl, scrapers and more"
 __license__ = "General Public License v3"
 __uri__ = "https://github.com/smerkousdavid/drunkbot"
-__version__ = "1.7"
+__version__ = "1.8"
 __author__ = "David Smerkous"
 __email__ = "smerkousdavid@gmail.com"
