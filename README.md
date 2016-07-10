@@ -1,6 +1,5 @@
 # drunkbot
 
-
 ### Intro
 Drunk bot is a full python cross platform discord bot that has many capabilities even the ability to add your own.
 Currently available options are youtube downloading (video and audio), playlist, audio web scrapers, image web scrapers,
@@ -20,22 +19,20 @@ On others you might have to google how to install it. *Second* Also make sure yo
 
 **Linux users** Make sure you have (as discord.py says) these two packages installed
 - libffi-dev (or `libffi-devel` on some systems)
-- python<version>-dev (e.g. `python3.5-dev` for Python 3.5)
+- python3.5-dev
 
 
 ####Step 1
 
 To install the stable version of drunkbot do this
 
-...
-python3.5 -m pip install -U drunkbot
-...
+    python3.5 -m pip install -U drunkbot
+
 
 If you want the (probably) unstable version
 
-...
-python3 -m pip install -U https://github.com/smerkousdavid/drunkbot/archive/master.zip#egg=drunkbot
-...
+    python3 -m pip install -U https://github.com/smerkousdavid/drunkbot/archive/master.zip#egg=drunkbot
+
 
 
 ####Step 2
@@ -44,9 +41,8 @@ Setup the bot with your account/application
 
 If you already have a bot (application) and a token id just do
 
-...
-drunkbot --token 'TOKEN.ID'
-...
+    drunkbot --token 'TOKEN.ID'
+
 
 This will automatically setup drunkbot to run with your client token id (This command wont start the sever keep reading)
 
@@ -63,6 +59,7 @@ If you **don't** have an application with a bot user
 
 Add the bot to a server
 
+
     1. Go here (login): https://discordapp.com/developers/applications/me
     2. Click on your previous application
     3. Copy and paste the client id into the url below (remove the < and > when pasting)
@@ -78,76 +75,52 @@ Now to actually run drunkbot
 
 To see the available command line options run
 
-...
-drunkbot -h
-...
+    drunkbot -h
 
 Here is an example of starting the drunkbot server
 With a startup message
 
-...
-drunkbot -s "I'm booted baby!"
-...
+    drunkbot -s "I'm booted baby!"
 
 ####Getting started on discord
 
 Send this message on the server the bot is located on
 
-...
-!help advanced
-...
+    !help advanced
 
 Example of me making a youtube search with drunk bot (Key words then what you want to do with the search)
 
-...
-!youtube karmin flex zone describe
-...
+    !youtube karmin flex zone describe
 
 Now if I wanted to play that song
 
-...
-!youtube karmin flex zone play
-...
+    !youtube karmin flex zone play
 
 Annoyed of that song why don't you pause it...
 
-...
-!audio pause
-...
+    !audio pause
 
 Wait what do I have in stock on the sever
 
-...
-!audio list
-...
+    !audio list
 
 Let me add something to it
 
-...
-!youtube pharrell marilyn download
-
-or
-
-!audio download william
-...
+    !youtube pharrell marilyn download
+    or
+    !audio download william
 
 Eww gross those sucked
 
-...
-!audio delete Pharrel all
-...
+    !audio delete Pharrel all
 
 I would just like to look at something now...
 
-...
-!random
-...
+    !random
 
 Are you in the mood for french?
 
-...
-!youtube https://www.youtube.com/watch?v=5SM-nA5l2HU play
-...
+    !youtube https://www.youtube.com/watch?v=5SM-nA5l2HU play
 
 Trust me there are more commands i'm just having fun with these right now
 Check out the !help for a current list of all commands
