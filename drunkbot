@@ -1,0 +1,50 @@
+#!/usr/bin/env python3.5
+from sys import stdout
+from os import chdir, getcwd
+from os.path import dirname
+from traceback import print_exc
+from argparse import ArgumentParser
+
+if __name__ == '__main__':
+    # noinspection PyBroadException
+    cwd = getcwd()  # Return to starting point
+    try:
+        from drunk_bot import Sync
+
+        package_path = dirname(Sync.__file__) + "/"
+        print("Found package path for drunkbot %s" % package_path)
+        chdir(package_path)
+
+        parser = ArgumentParser(description="The discord drunkbot (Mainly music) developed by David Smerkous")
+        parser.add_argument('-t', '--token', type=str, default=None,
+                            help='Updates the token file when running')
+        parser.add_argument('-s', '--startup', type=str, default=None,
+                            help="Add a startup message when bot joins chat")
+        parser.add_argument('-n', '--name', type=str, default=None,
+                            help="Set a new nickname for your bot")
+
+        args = parser.parse_args()
+        vargs = vars(args)
+
+        if vargs['token'] is not None:
+            token = str(vargs['token'])
+            if len(token) < 15 or (token.index(".") == -1):
+                parser.error("Invalid token provided!\nPlease supply valid token")
+                exit(1)
+            token_f_path = package_path + "token.txt"
+            print("Writing token %s to file %s..." % (token, token_f_path)),
+            token_file = open(token_f_path, "w")
+            token_file.write(token)
+            token_file.flush()
+            token_file.close()
+            print("Success!!!\nNow please run drunkbot again to run the server!")
+            exit(0)
+        from drunk_bot import Main
+
+        Main.__name__ = "__main__"
+        Main.main(vargs['startup'], vargs['name'])
+    except Exception as err:
+        print("Drunk bot failed badly... Error:\n%s" % str(err))
+        print("\nTraceback...\n")
+        print_exc(file=stdout)
+    chdir(cwd)

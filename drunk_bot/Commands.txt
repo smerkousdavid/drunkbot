@@ -1,0 +1,92 @@
+//Comments outside of code read please
+//Exec is located in the command_package (Do not include the .py)
+
+/*
+If you want to add more (simple) functions to the bot
+Here is what you have to do to add a command
+
+1.. Enclose with Start of command <#(command number)#> and End of command <#END#(command number)#>
+2.. The first line after the Start of command add the name of the command and nothing else
+3.. All arguments after are optional besides the exec...
+4.. __________________Descriptions_____________________________|_________________________Type_______________________________
+    * min_args are the minimum amount of args for the comand   | put 0 if it doesn't matter (Usage print will be thrown)
+    * max_args are the maximum amount of args for the command  | put -1 if if can have infinite arguments
+    * desc are the descriptions of the commands                | Please put a desc between 10 and 300 chars (p.s it wont error)
+    * usage is how does one use your program                   | Same as above please put one and follow the standards
+    * exec is the name of the python file to be executed       | Just type in the name that's in command package without .py
+    -------------------------------------------------------------------------------------------------------------------------
+5.. Create the actual command by creating a (the name you put in exec).py in the command_package
+6.. Format goes as follows
+>>>
+(Place imports here...)
+
+# You can have other function but the "main" function must be setup as such
+def execute(args: list):
+    try:
+        # Place working code here
+         return_to_user = "Hello world!"
+
+        return "The function return is %s" % str(return_to_user)
+    except Exception as err:
+        print("name of function error: %s" % str(err))
+        return "Couldn't run... name of function"
+<<<
+7.. For more advanced commands such as voice or that require long process time with threading
+    You will need to hard code that .py and work with the discord api in Main.py (You're on your own now) Ex: Sounds.py
+8.. Then your command is finished... save the files and run the script
+
+If that doesn't make sense look at the examples below
+*/
+
+//(First test) sum values
+
+<#1#>
+add
+min_args = "2"
+max_args = "-1"
+desc = "Add two numbers"
+usage = "!add <one> <two>..."
+exec = "add"
+<#END#1#>
+
+//Subtract a bunch of values to the first
+
+<#2#>
+sub
+min_args = "2"
+max_args = "-1"
+desc = "Sub two numbers"
+usage = "!sub <one> <two>..."
+exec = "sub"
+<#END#2#>
+
+//Evaluate a math equation
+
+<#3#>
+math
+min_args = "1"
+max_args = "-1"
+desc = "Evaluate an equation or math operation"
+usage = "!math <equation/operation>"
+exec = "math"
+<#END#3#>
+
+//List the videos downloaded
+
+<#4#>
+videos
+min_args = "0"
+max_args = "1"
+desc = "List or play videos that drunkbot has downloaded"
+usage = "!videos <no arguments>"
+exec = "videos"
+<#END#4#>
+
+<#5#>
+random
+min_args = "0"
+max_args = "1"
+desc = "Want something random here you go..."
+usage = "!random (image)"
+exec = "randomstuff"
+<#END#5#>
